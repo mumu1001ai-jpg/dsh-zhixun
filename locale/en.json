@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Job Search",
+    "description": "Aggregate recent Liepin, Zhaopin, Maimai, Guopin, BOSS, Jobui, and 51job listings, save a resume, and rank jobs with the configured LLM."
+  }
+}

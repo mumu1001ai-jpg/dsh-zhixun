@@ -1,0 +1,62 @@
+{
+  "name": "dsh-zhixun",
+  "version": "1.5.1",
+  "description": "职寻：按岗位与城市聚合公开职位，按时间范围筛选，并使用安装者自己的 DSH 模型进行简历匹配。",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "job-search",
+    "jobs",
+    "resume",
+    "llm"
+  ],
+  "license": "MIT",
+  "author": "dsh-zhixun contributors",
+  "homepage": "https://github.com/mumu1001ai-jpg/dsh-zhixun#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mumu1001ai-jpg/dsh-zhixun.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mumu1001ai-jpg/dsh-zhixun/issues"
+  },
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node scripts/validate.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}
